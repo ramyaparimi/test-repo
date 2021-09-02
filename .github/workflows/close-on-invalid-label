@@ -6,18 +6,15 @@ name: Close issues/PRs on adding invalid label
 
 on:
   issues:
-    types: [labeled, unlabeled, reopened]
-  pull-requests:
-    types: [labeled, open, reopened]
+    types: [opened]
+
           
 jobs:
-  action:
-    runs-on: ubuntu-latest
-  
+  build:
+    name: close-on-invalid
+    runs-on: ubuntu-16.04
     steps:
-      - uses: dessant/support-requests@v2
-        with:
-          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          labels: 'invalid'
-        close-issue: true
-      
+    - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
+      with:
+        github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        close: true

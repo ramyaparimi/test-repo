@@ -1,24 +1,24 @@
-name: Check for Spammy Issues
+name: Close issues/PRs on adding invalid label
 
 # **What it does**: This action closes low value pull requests in the open-source repository.
 # **Why we have it**: We get lots of spam in the open-source repository.
 # **Who does it impact**: Open-source contributors.
 
 on:
-  add-labels: 'invalid'
+  issues:
+    types: [labeled, open, reopened]
+  pull-requests:
+    types: [labeled, open, reopened]
           
 jobs:
-  close-on-invalid-label:
-    if: ramyaparimi.repository == ' ramyaparimi/test-repo'
+  action:
     runs-on: ubuntu-latest
+    if: ramyaparimi.repository == ' ramyaparimi/test-repo'
     
     steps:
-      name: Close issues/PRs on adding invalid label
-      uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
-      state: closed
-    runs-on: ubuntu-latest
-    steps:
+      - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
         with:
-          github-token: ${{ secrets.DOCUBOT_FR_PROJECT_BOARD_WORKFLOWS_REPO_ORG_READ_SCOPES }}
-          labels: ['invalid'],
-              state: 'closed'
+          github-token: ${{ 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 }}
+          labels: 'invalid'
+        close-issue: true
+      

@@ -16,4 +16,5 @@ jobs:
       env:
         LABEL: invalid
         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        close-issue: true
           

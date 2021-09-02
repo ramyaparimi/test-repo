@@ -1,4 +1,4 @@
-name: Close issues/PRs on adding invalid label
+name: Check for Spammy Issues
 
 # **What it does**: This action closes low value pull requests in the open-source repository.
 # **Why we have it**: We get lots of spam in the open-source repository.
@@ -7,14 +7,13 @@ name: Close issues/PRs on adding invalid label
 on:
   issues:
     types: [opened]
-
-          
 jobs:
-  build:
-    name: close-on-invalid
-    runs-on: ubuntu-16.04
+  spammy-title-check:
+    name: Remove issues with spammy titles
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
-      with:
-        github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        close: true
+      uses: bdougie/close-issues-based-on-label@master
+      env:
+        LABEL: invalid
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          

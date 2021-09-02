@@ -6,15 +6,14 @@ name: Close issues/PRs on adding invalid label
 
 on:
   issues:
-    types: [labeled, open, reopened]
+    types: [labeled, unlabeled, reopened]
   pull-requests:
     types: [labeled, open, reopened]
           
 jobs:
   action:
     runs-on: ubuntu-latest
-    if: ramyaparimi.repository == ' ramyaparimi/test-repo'
-    
+  
     steps:
       - uses: dessant/support-requests@v2
         with:

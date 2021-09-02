@@ -1,8 +1,4 @@
-name: Check for Spammy Issues
-
-# **What it does**: This action closes low value pull requests in the open-source repository.
-# **Why we have it**: We get lots of spam in the open-source repository.
-# **Who does it impact**: Open-source contributors.
+name: Close issue on adding invalid label
 
 on:
   issues:
@@ -15,7 +11,8 @@ jobs:
     
     steps:
       - uses: actions/github-script@v4
-        github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          with:
+            github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         close-issue: true
         
            

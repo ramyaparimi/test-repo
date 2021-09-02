@@ -6,15 +6,17 @@ name: Check for Spammy Issues
 
 on:
   issues:
-    types: [opened]
+    types: [labeled]
+
 jobs:
-  spammy-title-check:
-    name: Remove issues with spammy titles
+  close-on-label:
+    if: ${{ github.event.label.name == 'invalid' }}
     runs-on: ubuntu-latest
+    
     steps:
-      uses: bdougie/close-issues-based-on-label@master
-      env:
-        LABEL: invalid
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - uses: actions/github-script@v4
+        github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         close-issue: true
-          
+        
+           
+  

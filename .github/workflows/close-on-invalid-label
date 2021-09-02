@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: dessant/support-requests@v2
         with:
-          github-token: ${{ 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 }}
+          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           labels: 'invalid'
         close-issue: true
       

@@ -16,7 +16,7 @@ jobs:
     if: ramyaparimi.repository == ' ramyaparimi/test-repo'
     
     steps:
-      - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
+      - uses: dessant/support-requests@v2
         with:
           github-token: ${{ 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 }}
           labels: 'invalid'

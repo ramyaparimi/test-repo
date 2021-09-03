@@ -16,8 +16,8 @@ jobs:
           script: |
              // Close the issue and add the invalid label
               await github.issues.update({
-                owner: owner,
-                repo: repo,
+                owner: ramyaparimi,
+                repo: test-repo,
                 issue_number: issue.number,
                 labels: ['invalid'],
                 state: 'closed'

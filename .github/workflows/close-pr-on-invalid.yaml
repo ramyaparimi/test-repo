@@ -9,7 +9,7 @@ on:
     types: [labeled]
 
 jobs:
-  close on invalid label:
+  close-on-invalid-label:
     
     runs-on: ubuntu-latest
 

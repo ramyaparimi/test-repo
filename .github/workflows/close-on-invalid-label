@@ -10,10 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Close issue
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: gh close issue ${{ github.event.number }}
+      - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
+        with:
+          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          script: |
+             // Close the issue and add the invalid label
+              await github.issues.update({
+                owner: owner,
+                repo: repo,
+                issue_number: issue.number,
+                labels: ['invalid'],
+                state: 'closed'
+            });
         
            
   

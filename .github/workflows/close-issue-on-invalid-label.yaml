@@ -13,8 +13,8 @@ jobs:
       - name: Close issue
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: gh issue close ${{ github.event.number }}
-            echo "github.event.number"
+        run: gh issue close ${{ github.issue.number }}
+
     
     
 #     steps:

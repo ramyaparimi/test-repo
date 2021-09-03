@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/github-script@v4
-          with:
-            github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        close-issue: true
+      - name: Close issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: gh close issue ${{ github.event.number }}
         
            
   

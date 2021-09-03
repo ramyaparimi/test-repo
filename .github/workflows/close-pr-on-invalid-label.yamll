@@ -10,7 +10,7 @@ on:
 
 jobs:
   close on invalid label:
-    if: github.repository != 'github/docs-internal'
+    
     runs-on: ubuntu-latest
 
     steps:

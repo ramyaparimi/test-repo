@@ -17,14 +17,14 @@ jobs:
               
               const issue = context.payload.issue
               
-             // Close the issue and add the invalid label
+              // Close the issue and add the invalid label
               await github.issues.update({
                 owner: 'ramyaparimi',
                 repo: 'test-repo',
                 issue_number: issue.number,
                 labels: ['invalid'],
                 state: 'closed'
-            });
+              });
         
            
   

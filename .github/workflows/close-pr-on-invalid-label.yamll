@@ -1,0 +1,32 @@
+name: Triage new pull requests
+
+# **What it does**:
+# **Why we have it**:
+# **Who does it impact**:
+
+on:
+  pull_request_target:
+    types:
+      - reopened
+      - opened
+
+jobs:
+  close on invalid label:
+    if: github.repository != 'github/docs-internal'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: close pr with 'invalid' label
+        uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          script:|
+            
+            // Close the issue and add the invalid label
+            await github.issues.update({
+              owner: 'ramyaparimi',
+              repo: 'test-repo',
+              labels: ['invalid'],
+              state: 'closed'
+            });
+       

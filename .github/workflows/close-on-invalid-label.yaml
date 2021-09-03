@@ -16,6 +16,8 @@ jobs:
           script: |
               
               const issue = context.payload.issue
+              const owner = 'github'
+              const repo = 'docs'
               
               // Close the issue and add the invalid label
               await github.issues.update({

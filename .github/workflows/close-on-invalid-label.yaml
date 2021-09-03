@@ -3,10 +3,12 @@ name: Close issue on adding invalid label
 on:
   issues:
     types: [labeled]
+#   pull_request:
+#     types: [labeled]
 
 jobs:
   close-on-label:
-    if: ${{ github.event.label.name == 'invalid' }}
+#     if: ${{ github.event.label.name == 'invalid' }}
     runs-on: ubuntu-latest
     
     steps:

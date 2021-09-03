@@ -1,4 +1,4 @@
-name: Close issue/PR on adding invalid label
+name: Close issue on adding invalid label
 
 on:
   issues:

@@ -28,8 +28,8 @@ jobs:
               
               // Comment on the issue
               await github.issues.createComment({
-                owner: owner,
-                repo: repo,
+                owner: 'ramyaparimi',
+                repo: 'test-repo',
                 issue_number: issue.number,
                 body: `This issue may have been opened accidentally. I'm going to close it now, but feel free to open a new issue with a more descriptive title or ask any questions in [discussions](https://github.com/github/docs/discussions)!`
               });

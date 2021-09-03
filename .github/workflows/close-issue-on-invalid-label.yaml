@@ -13,26 +13,26 @@ jobs:
 #       - name: Close issue
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-#         run: gh close issue ${{ github.event.number }}
+#         run: gh issue close ${{ github.event.number }}
     
-    steps:
-      - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
+#     steps:
+#       - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           script: |
               
-              const issue = context.payload.issue
-              const owner = 'github'
-              const repo = 'docs'
+#               const issue = context.payload.issue
+#               const owner = 'github'
+#               const repo = 'docs'
               
-              // Close the issue and add the invalid label
-              await github.issues.update({
-                owner: 'ramyaparimi',
-                repo: 'test-repo',
-                issue_number: issue.number,
-                labels: ['invalid'],
-                state: 'closed'
-              });
+#               // Close the issue and add the invalid label
+#               await github.issues.update({
+#                 owner: 'ramyaparimi',
+#                 repo: 'test-repo',
+#                 issue_number: issue.number,
+#                 labels: ['invalid'],
+#                 state: 'closed'
+#               });
               
 
               

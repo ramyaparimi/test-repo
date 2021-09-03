@@ -1,4 +1,4 @@
-name: Triage new pull requests
+name: close PR on invalid label
 
 # **What it does**:
 # **Why we have it**:

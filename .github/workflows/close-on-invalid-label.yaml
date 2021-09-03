@@ -1,4 +1,4 @@
-name: Close issue on adding invalid label
+name: Close on adding invalid label
 
 on:
   issues:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   close-on-adding-invalid-label:
-#     if: github.repository == 'github/docs'
+    if: github.repository == 'github/docs'
     runs-on: ubuntu-latest
     
     steps:

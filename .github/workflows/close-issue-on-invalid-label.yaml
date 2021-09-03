@@ -15,6 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: gh issue close ${{ github.event.number }}
     
+    
 #     steps:
 #       - uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
 #         with:

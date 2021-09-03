@@ -5,7 +5,7 @@ name: Triage new pull requests
 # **Who does it impact**:
 
 on:
-  pull_request
+  pull_request:
     types: [labeled]
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          script:|
+          script: |
             
             // Close the issue and add the invalid label
             await github.issues.update({

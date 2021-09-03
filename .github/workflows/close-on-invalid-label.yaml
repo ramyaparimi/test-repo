@@ -3,8 +3,6 @@ name: Close issue/PR on adding invalid label
 on:
   issues:
     types: [labeled]
-  pull_request:
-    types: [labeled]
 
 jobs:
   close-on-adding-invalid-label:

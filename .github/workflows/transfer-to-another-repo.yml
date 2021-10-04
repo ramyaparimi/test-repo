@@ -59,11 +59,11 @@ jobs:
       - name: Comment on the old issue
         run: gh issue comment $OLD_ISSUE --body "Thank you for opening this issue! Updates to the REST/GraphQL API description must be made internally. I have copied your issue to an internal issue, so I will close this issue."
         env:
-          GITHUB_TOKEN: ${{secrets.DOCUBOT_READORG_REPO_WORKFLOW_SCOPES}}
+          GITHUB_TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
           OLD_ISSUE: ${{ github.event.issue.html_url }}
 
       - name: Close the old issue
         run: gh issue close $OLD_ISSUE
         env:
-          GITHUB_TOKEN: ${{secrets.DOCUBOT_READORG_REPO_WORKFLOW_SCOPES}}
+          GITHUB_TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
           OLD_ISSUE: ${{ github.event.issue.html_url }}

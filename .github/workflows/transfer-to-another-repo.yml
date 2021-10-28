@@ -13,7 +13,7 @@ jobs:
   transfer-issue:
     name: Transfer issue
     runs-on: ubuntu-latest
-    if: (github.event.label.name == 'rest-description' || github.event.label.name == 'graphql-description') && github.repository == 'ramyaparim/test-repo'
+    if: (github.event.label.name == 'move') && github.repository == 'ramyaparim/test-repo'
     steps:
 #       - name: Check if this run was triggered by a member of the docs team
 #         uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d

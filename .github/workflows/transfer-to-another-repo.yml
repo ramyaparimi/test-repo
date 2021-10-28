@@ -1,4 +1,4 @@
-name: Copy to REST API issue to docs-content
+name: move to another repo
 
 # **What it does**: Copies an issue in the open source repo to the docs-content repo, comments on and closes the original issue
 # **Why we have it**: REST API updates cannot be made in the open source repo. Instead, we copy the issue to an internal issue (we do not transfer so that the issue does not disappear for the contributor) and close the original issue.
@@ -13,7 +13,7 @@ jobs:
   transfer-issue:
     name: Transfer issue
     runs-on: ubuntu-latest
-    if: (github.event.label.name == 'move') && github.repository == 'ramyaparim/test-repo'
+    if: (github.event.label.name == 'move') && github.repository == 'ramyaparimi/test-repo'
     steps:
 #       - name: Check if this run was triggered by a member of the docs team
 #         uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d

@@ -43,19 +43,19 @@ jobs:
 #           echo Aborting. This workflow must be triggered by a member of the docs team.
 #           exit 1
 
-      - name: Create an issue in the docs-content repo
+      - name: Create an issue in the fluffy-chickpea repo
         run: |
           new_issue_url="$(gh issue create --title "$ISSUE_TITLE" --body "$ISSUE_BODY" --repo ramyaparimi/fluffy-chickpea)"
           echo 'NEW_ISSUE='$new_issue_url >> $GITHUB_ENV
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.FLUFFY_SECRET}}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
 
       - name: Comment on the new issue
         run: gh issue comment $NEW_ISSUE --body "This issue was originally opened in the open source repo as $OLD_ISSUE"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.FLUFFY_SECRET}}
           NEW_ISSUE: ${{ env.NEW_ISSUE }}
           OLD_ISSUE: ${{ github.event.issue.html_url }}
 

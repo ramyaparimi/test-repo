@@ -1,7 +1,5 @@
 name: Linting
-on: 
-  pull_request_target:
-    types: [opened, reopened]
+on: [push]
 
 permissions:
   pull-requests: write

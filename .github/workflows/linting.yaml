@@ -1,11 +1,6 @@
 name: Linting
 on: [push]
 
-permissions:
-  checks: write
-  contents: read
-  pull-requests: read
-
 jobs:
   linter:
     runs-on: ubuntu-latest

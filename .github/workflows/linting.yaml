@@ -11,7 +11,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@v1.4.3
         with:
-          files: vale-styles
+          files: Vale/Docs
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

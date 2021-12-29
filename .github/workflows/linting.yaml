@@ -12,6 +12,7 @@ jobs:
         uses: errata-ai/vale-action@v1.4.3
         with:
           config: https://raw.githubusercontent.com/errata-ai/vale/master/.vale.ini
+          files: __onlyModified
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

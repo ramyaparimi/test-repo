@@ -1,9 +1,6 @@
 name: Linting
 on: [push]
 
-permissions:
-  contents: read
-  
 jobs:
   linter:
     runs-on: ubuntu-latest

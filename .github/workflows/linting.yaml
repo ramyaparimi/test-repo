@@ -1,4 +1,4 @@
-name: Linting
+name: Linting on files
 on: [pull_request]
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
         with:
           config: https://raw.githubusercontent.com/errata-ai/vale/master/.vale.ini
           files: __onlyModified
-          onlyAnnotateModifiedLines: true
+
         env:
           # Required, set by GitHub actions automatically:
           # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret

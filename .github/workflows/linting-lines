@@ -1,5 +1,5 @@
 name: Linting on lines
-on: [pull_request]
+on: [push]
 
 jobs:
   linter:
@@ -11,6 +11,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@v1.4.3
         with:
+          config: https://raw.githubusercontent.com/errata-ai/vale/master/.vale.ini
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

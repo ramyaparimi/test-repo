@@ -6,8 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: errata-ai/vale-action@v1.4.3
-
+        uses: errata-ai/vale-action@master
       - name: Vale
         uses: errata-ai/vale-action@v1.4.3
         with:

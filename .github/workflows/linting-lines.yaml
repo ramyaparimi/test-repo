@@ -1,9 +1,5 @@
 name: Linting 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
   pull_request:
 
 jobs:
@@ -15,7 +11,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@v1.4.3
         with:
-          config: https://gist.githubusercontent.com/ramyaparimi/b541e2c013bf856e996b7b6548494920/raw/9886bdf5246f5748e5e14d28792e53e53b79c4bd/.vale.ini
+          config: .vale.ini
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

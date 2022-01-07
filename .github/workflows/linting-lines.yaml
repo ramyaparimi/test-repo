@@ -1,17 +1,22 @@
-name: Linting 
+name: Linter for docs contribution PRs
 on:
-  pull_request
-  
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   linter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: errata-ai/vale-action@master
+        uses: actions/checkout@master
+
       - name: Vale
-        uses: errata-ai/vale-action@v1.4.3
+        uses: errata-ai/vale-action@v1.4.3 
         with:
-          config: https://gist.github.com/ramyaparimi/b541e2c013bf856e996b7b6548494920
+          config: .vale.ini
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

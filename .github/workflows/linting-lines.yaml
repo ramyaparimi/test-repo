@@ -1,7 +1,7 @@
 name: Linting 
 on:
-  [push]
-
+  pull_request
+  
 jobs:
   linter:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@v1.4.3
         with:
-          config: .vale.ini
+          config: https://gist.github.com/ramyaparimi/b541e2c013bf856e996b7b6548494920
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

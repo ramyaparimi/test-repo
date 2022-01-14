@@ -1,40 +1,22 @@
-# name: Linter for docs contribution PRs
-# on:
-#   pull_request
+name: Linter for docs contribution PRs
+on:
+  pull_request
 
-# permissions:
-#   contents: read
-#   pull-requests: write
-
-# jobs:
-#   linter:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@master
-
-#       - name: Vale
-#         uses: errata-ai/vale-action@v1.4.3 
-#         with:
-#           config: https://raw.githubusercontent.com/ramyaparimi/fluffy-chickpea/main/.vale.ini
-
-name: Vale Lint
-on: [push]
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
-  prose:
+  linter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
       - name: Vale
-        uses: errata-ai/vale-action@310a5ac41197ffb704515622b4914c72d3abc54b
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: errata-ai/vale-action@v1.4.3 
         with:
-          files: styles
-
+          config: https://gist.githubusercontent.com/ramyaparimi/7910fe78235b5155373b586967b11a89/raw/ca93c0b23e1b8013895aeb84802a3e37064973ba/.vale.ini
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

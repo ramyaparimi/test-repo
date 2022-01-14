@@ -1,18 +1,30 @@
-name: Linting
-on: [push]
+name: Linter as style guide
+
+# **What it does**: Lints lines that are modified in .md file. Posts an annotation if there is an errors or suggestion
+# **Why we have it**: To help contributors make quality changes in their PR
+# **Who does it impact**: Open source contributors making changes to .md files
+
+on:
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: write
 
 jobs:
-  prose:
+  linter:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
-    - name: Vale
-      uses: errata-ai/vale-action@v1
-      with:
-        onlyAnnotateModifiedLines: true
-      env:
-        # Required, set by GitHub actions automatically:
-        # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Vale
+        uses: errata-ai/vale-action@cb5ab4acdaf3169b1b5e5b4785d844aaea6366a0
+        with:
+          config: .vale.ini
+          onlyAnnotateModifiedLines: true
+        env:
+          # Required, set by GitHub actions automatically:
+          # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

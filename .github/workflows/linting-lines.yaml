@@ -17,6 +17,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@cb5ab4acdaf3169b1b5e5b4785d844aaea6366a0
         with:
+          config: .vale.ini
           onlyAnnotateModifiedLines: true
         env:
           # Required, set by GitHub actions automatically:

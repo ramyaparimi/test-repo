@@ -7,11 +7,6 @@ name: Linter as style guide
 on:
   [push]
 
-permissions:
-  actions: read
-  contents: read
-  pull-requests: write
-
 jobs:
   linter:
     runs-on: ubuntu-latest

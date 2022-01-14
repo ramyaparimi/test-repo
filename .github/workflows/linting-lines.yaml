@@ -5,7 +5,7 @@ name: Linter as style guide
 # **Who does it impact**: Open source contributors making changes to .md files
 
 on:
-  pull_request:
+  [push]
 
 permissions:
   actions: read

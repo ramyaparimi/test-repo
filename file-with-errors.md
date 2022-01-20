@@ -47,4 +47,3 @@ After you retire a goal, you won't be able to reactivate the goal. You must crea
 {% data reusables.sponsors.edit-goal %}
 {% data reusables.sponsors.retire-goal %}
 
-will Vale picjhg uo wthus erris 

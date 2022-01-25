@@ -13,14 +13,14 @@ type: how_to
 topics:
   - Open Source
   - Sponsors profile
-shortTitle: Manage sponsor goals
+shortTitle: Manage sponsor goals 
 ---
 
 ## About sponsorship goals
 
 You can set a funding goal for your sponsored account and share the goal with your community. Goals help you understand the impact you have in the open source community and build up your presence in the {% data variables.product.prodname_sponsors %} program.
 
-Your goal can set a target for the number of sponsors you want to have or the amount of money you want to earn each month. You can only set one goal up at a time. After you reach a goal, you can set another goal.
+Your goal can set a target for the number of sponsors you want to have or the amount of money you want to earn each month. You can only set one goal up at a time. After you reach a goal, you can set another goal. checking vale error s
 
 ## Setting a goal
 

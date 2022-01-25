@@ -10,7 +10,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-type: tutorial
+type: tutorial dvkjd
 topics:
   - Workflows
 ---

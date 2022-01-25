@@ -1,11 +1,6 @@
 name: Linting
 on: [pull_request]
 
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
-
 jobs:
   prose:
     runs-on: ubuntu-latest

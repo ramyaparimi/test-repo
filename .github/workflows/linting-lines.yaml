@@ -2,7 +2,7 @@ name: Linting
 on: [pull_request_target]
 
 permissions:
-#   actions: write
+  actions: read
   checks: write
   contents: read
   issues: write

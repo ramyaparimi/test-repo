@@ -1,0 +1,31 @@
+name: Add comment
+
+# **What it does**: Comment on issues and pull requests when sme label is added
+# **Why we have it**: We want to manage our queue of issues and pull requests that need sme review.
+# **Who does it impact**: Everyone that works on docs or docs-internal.
+
+on:
+  issues:
+    types: [labeled]
+  pull_request_target:
+    types: [labeled]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  add-comment:
+    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Add comment
+        if: ${{ github.event_name == 'issues' || github.event_name == 'pull_request_target' }}
+        
+        steps:
+          - uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+            with: 
+              repo-token: ${{ secrets.GITHUB_TOKEN }}
+              body: |
+                This needs a techincal :eyes:. An SME will be reviewing this soon. Thanks so much for your patience :sparking-heart:

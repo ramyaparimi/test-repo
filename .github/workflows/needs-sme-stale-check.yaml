@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   comment-on-sme-issue:
-    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' && github.event_name == 'issues' || github.event_name == 'pull_request_target' }}
+    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
     runs-on: ubuntu-latest
 
     steps:

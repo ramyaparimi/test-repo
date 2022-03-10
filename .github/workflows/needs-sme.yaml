@@ -15,7 +15,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  add-comment:
+  add-issue-comment:
     if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
     runs-on: ubuntu-latest
     steps:
@@ -26,9 +26,13 @@ jobs:
           body: |
             This needs techincal review and an SME will review this soon :eyes:. Thanks so much for your patience :sparkling-heart:
             
+  add-pr-comment:
+    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
+    runs-on: ubuntu-latest
+    steps:
       - uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            This needs techincal review and an SME will review this soon :eyes:. Thanks so much for your patience :sparkling-heart:
+           This needs techincal review and an SME will review this soon :eyes:. Thanks so much for your patience :sparkling-heart:

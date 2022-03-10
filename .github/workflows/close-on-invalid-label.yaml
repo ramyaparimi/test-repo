@@ -1,10 +1,10 @@
 name: Close on adding invalid label
 
-on:
-  issues:
-    types: [labeled]
-  pull_request:
-    types: [labeled]
+# on:
+#   issues:
+#     types: [labeled]
+#   pull_request:
+#     types: [labeled]
 
 jobs:
   close-on-adding-invalid-label:

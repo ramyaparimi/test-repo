@@ -5,8 +5,10 @@ name: Needs sme stale check
 # **Who does it impact**: Anyone working in the open repo.
 
 on:
-  schedule:
-    - cron: '5 * * * *' # Run each day at 16:45 UTC == 45 16 * * */ 8:45 PST
+  issues:
+    types: [labeled]
+  pull_request_target:
+    types: [labeled]
 
 permissions:
   issues: write
@@ -25,5 +27,3 @@ jobs:
           days-before-issue-close: -1 
           stale-pr-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
           days-before-pr-close: -1
-          stale-pr-label: 'stale'
-          stale-issue-label: 'stale'

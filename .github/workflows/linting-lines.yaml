@@ -1,10 +1,10 @@
 name: Linting
 on: [pull_request]
 
-permissions:
-  checks: write
-  contents: read
-  pull-requests: write
+# permissions:
+#   checks: write
+#   contents: read
+#   pull-requests: write
 
 jobs:
   prose:

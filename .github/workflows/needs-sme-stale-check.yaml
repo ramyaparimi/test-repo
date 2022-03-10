@@ -1,4 +1,4 @@
-name: Public Repo Stale Check
+name: Needs sme stale check 
 
 # **What it does**: Provides stale checks on issues/PRs that need SME review on open source docs repo.
 # **Why we have it**: In the open repo, we want we want frequent checks on issues/PRs that are waiting on SME review.
@@ -6,7 +6,7 @@ name: Public Repo Stale Check
 
 on:
   schedule:
-    - cron: '25 10 * * *' # Run each day at 16:45 UTC == 45 16 * * */ 8:45 PST
+    - cron: '29 16 * * *' # Run each day at 16:45 UTC == 45 16 * * */ 8:45 PST
 
 permissions:
   issues: write

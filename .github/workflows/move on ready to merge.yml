@@ -4,13 +4,13 @@ name: Move and unlabel ready to merge PRs
 # **Why we have it**: To help with managing our project boards.
 # **Who does it impact**: Open source contributors, open-source maintainers.
 
-on:
-  pull_request_target:
-    types:
-      - labeled
+# on:
+#   pull_request_target:
+#     types:
+#       - labeled
 
-permissions:
-  pull-requests: write
+# permissions:
+#   pull-requests: write
 
 jobs:
   unmark_for_review:

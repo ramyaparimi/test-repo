@@ -5,6 +5,8 @@ name: Add comment
 # **Who does it impact**: Everyone that works on docs or docs-internal.
 
 on:
+  schedule:
+    - cron: '5 * * * *' # Run each day at 16:45 UTC / 8:45 PST
   issues:
     types: [labeled]
   pull_request_target:

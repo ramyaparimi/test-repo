@@ -1,0 +1,29 @@
+name: Public Repo Stale Check
+
+# **What it does**: Provides stale checks on issues/PRs that need SME review on open source docs repo.
+# **Why we have it**: In the open repo, we want we want frequent checks on issues/PRs that are waiting on SME review.
+# **Who does it impact**: Anyone working in the open repo.
+
+on:
+  schedule:
+    - cron: '30 10 * * *' # Run each day at 16:45 UTC == 45 16 * * */ 8:45 PST
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale_check_on_sme_items:
+    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' && github.event_name == 'issues' || github.event_name == 'pull_request_target' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/stale@7fb802b3079a276cf3c7e6ba9aa003c665b3f838
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
+          days-before-issue-stale: 7
+          days-before-issue-close: -1 # never close
+          stale-pr-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
+          days-before-pr-stale: 7
+          days-before-pr-close: -1 # never close

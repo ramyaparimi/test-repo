@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   stale_needs-sme:
-    if: ${{ github.repository == 'github/docs' && github.event.label.name == 'needs SME' }}
+    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
     runs-on: ubuntu-latest
 
     steps:

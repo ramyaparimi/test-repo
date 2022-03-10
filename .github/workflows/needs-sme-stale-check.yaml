@@ -13,16 +13,20 @@ permissions:
   pull-requests: write
 
 jobs:
-  stale_check_on_sme_items:
+  comment-on-sme-issue:
     if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' && github.event_name == 'issues' || github.event_name == 'pull_request_target' }}
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/stale@7fb802b3079a276cf3c7e6ba9aa003c665b3f838
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          days-before-stale: 7
-          stale-issue-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
-          days-before-issue-close: -1 # never close
-          stale-pr-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
-          days-before-pr-close: -1 # never close
+      - name: comment on issue
+        if: ${{ github.event_name == 'issues' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh issue comment "Hi from GitHub CLI"
+        
+      - name: comment on PR
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment "Hi from Github CLI"
+              

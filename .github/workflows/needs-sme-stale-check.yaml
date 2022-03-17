@@ -6,7 +6,7 @@ name: Needs sme stale check
 
 on:
   schedule:
-    - cron: '10 15 * * *' # Run each day at 16:45 UTC / 8:45 PST
+    - cron: '30 03 * * *' # Run each day at 16:45 UTC / 8:45 PST
 
 permissions:
   issues: write
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/stale@7fb802b3079a276cf3c7e6ba9aa003c665b3f838
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          days-before-stale: 7
+          days-before-stale: 1
           stale-issue-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
           days-before-issue-close: -1 # never close
           stale-pr-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'

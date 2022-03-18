@@ -21,6 +21,8 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
           days-before-stale: 1
+          stale-issue-label: "SME stale"
           days-before-issue-close: -1 # never close
           stale-pr-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
+          stale-pr-label: "SME stale"
           days-before-pr-close: -1 # never close

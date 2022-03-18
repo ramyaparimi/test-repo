@@ -5,8 +5,8 @@ name: Needs sme stale check
 # **Who does it impact**: Anyone working in the open repo.
 
 on:
-  issues:
-  pull_request:
+  issues: [opened]
+  pull_request: [opened]
 
 permissions:
   issues: write

@@ -4,9 +4,7 @@ name: Needs sme stale check
 # **Why we have it**: In the open repo, we want we want frequent checks on issues/PRs that are waiting on SME review.
 # **Who does it impact**: Anyone working in the open repo.
 
-on:
-  issues: [opened]
-  pull_request: [opened]
+on: workflow_dispatch
 
 permissions:
   issues: write

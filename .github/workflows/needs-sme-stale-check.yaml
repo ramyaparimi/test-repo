@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   stale_needs-sme:
-    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
+    if: ${{ github.repository == 'ramyaparimi/test-repo' }}
     runs-on: ubuntu-latest
 
     steps:

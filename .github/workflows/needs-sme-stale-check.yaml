@@ -22,6 +22,7 @@ jobs:
           only-labels: needs SME
           remove-stale-when-updated: true
           ignore-updates: true
+          days-before-stale: 1
           stale-issue-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'
           days-before-issue-close: -1 # never close
           stale-pr-message: 'This is a gentle bump for the docs team that this PR is waiting for technical review.'

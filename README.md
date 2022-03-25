@@ -1,4 +1,3 @@
 # test-repo
 
-his
-dfwer
+  testing needs sme stale

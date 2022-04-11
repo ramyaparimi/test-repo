@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   add-issue-comment:
-    if: ${{ github.repository == 'ramyaparimi/test-repo' && github.event.label.name == 'needs SME' }}
+    if: ${{ github.repository == 'ramyaparimi/test-repo' && (github.event.label.name == 'needs SME' && github.event_name == 'issues' || github.event_name == 'pull_request_target') }}
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae

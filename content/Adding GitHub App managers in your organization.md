@@ -25,7 +25,7 @@ For more information about {% data variables.product.prodname_github_app %} mana
 
 1. Under "Management", type the username of the person you want to designate as a {% data variables.product.prodname_github_app %} manager in the organization, and click **Grant**.
 
-    ![Add a {% data variables.product.prodname_github_app %} manager](/assets/images/help/organizations/add-github-app-manager.png)
+    ![Add a {% data variables.product.prodname_github_app %} manager](/assets/images/help/organizations/add-github-app-manager.png)png
 
 ## Giving someone the ability to manage an individual {% data variables.product.prodname_github_app %}
 
